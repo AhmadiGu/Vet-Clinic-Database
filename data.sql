@@ -1,8 +1,6 @@
  
 /* New data */
 
-INSERT INTO animals (id,name, date_of_birth, escape_attempts, neutered, weight_kg) VALUES (2,'Gabumon', 'Nov 15, 2018', 2, true, 8);
-
 INSERT INTO animals (id,name, date_of_birth, escape_attempts, neutered, weight_kg) VALUES (5,'Charmander', 'Feb 08, 2020', 0, false, -11);
 
 INSERT INTO animals (id,name, date_of_birth, escape_attempts, neutered, weight_kg) VALUES (6,'Plantmon', 'Nov 15, 2021', 2, true, -5.7);
