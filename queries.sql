@@ -74,3 +74,30 @@ SELECT species, AVG(escape_attempts) FROM animals WHERE
  date_of_birth BETWEEN '1990-01-01' AND '2000-12-31' GROUP BY species;
 SELECT species, CAST(AVG(escape_attempts) AS DECIMAL(10)) FROM animals 
 WHERE date_of_birth BETWEEN '1990-01-01' AND '2000-12-31' GROUP BY species;
+
+-- multiple tables join
+
+SELECT full_name, name FROM animals INNER JOIN owners
+ON animals.owner_id = owners.id WHERE owners.full_name = 'Melody Pond';
+ 
+SELECT animals.name, species.name FROM animals INNER JOIN species
+ON animals.species_id = species.id WHERE species.name = 'Pokemon'; 
+
+SELECT full_name, name FROM animals RIGHT JOIN owners
+ON animals.owner_id = owners.id;
+
+SELECT COUNT(animals.name), species.name FROM animals INNER JOIN species
+ON animals.species_id = species.id GROUP BY species.name;
+
+SELECT animals.name, owners.full_name, species.name FROM animals
+INNER JOIN owners ON animals.owner_id = owners.id 
+INNER JOIN species ON animals.species_id = species.id 
+WHERE owners.full_name = 'Jennifer Orwell' AND species.name = 'Digimon';
+
+SELECT full_name, name, escape_attempts FROM animals INNER JOIN owners
+ON animals.owner_id = owners.id 
+WHERE owners.full_name = 'Dean Winchester' AND animals.escape_attempts = 0;
+
+SELECT full_name, COUNT(*) FROM animals INNER JOIN owners
+ON animals.owner_id = owners.id 
+GROUP BY full_name ORDER BY count DESC LIMIT 1;
