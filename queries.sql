@@ -101,3 +101,53 @@ WHERE owners.full_name = 'Dean Winchester' AND animals.escape_attempts = 0;
 SELECT full_name, COUNT(*) FROM animals INNER JOIN owners
 ON animals.owner_id = owners.id 
 GROUP BY full_name ORDER BY count DESC LIMIT 1;
+
+-- NEW QUERIES 
+
+SELECT animals.name, vets.name, visits.date_of_visit FROM vets INNER JOIN visits ON
+vets.id = visits.vets_id INNER JOIN animals ON visits.animals_id = animals.id
+ WHERE vets.name = 'William Tatcher' ORDER BY date_of_visit DESC LIMIT 1;
+
+SELECT COUNT(animals.name), vets.name  FROM vets INNER JOIN visits ON
+vets.id = visits.vets_id INNER JOIN animals ON visits.animals_id = animals.id
+ WHERE vets.name = 'Stephanie Mendez' GROUP BY vets.name;
+
+SELECT  vets.name, species.name FROM vets  FULL OUTER JOIN specializations ON
+vets.id = specializations.vets_id   FULL OUTER JOIN 
+ species ON species.id = specializations.species_id;
+
+SELECT animals.name,visits.date_of_visit FROM animals INNER JOIN visits ON 
+visits.animals_id = animals.id 
+WHERE visits.vets_id =(SELECT id FROM vets WHERE vets.name ='Stephanie Mendez')
+AND visits.date_of_visit BETWEEN '2020-04-01' AND '2020-08-30';
+
+SELECT animals.name, COUNT(*) FROM animals INNER JOIN visits 
+ON visits.animals_id = animals.id 
+GROUP BY animals.name
+ORDER BY count DESC
+LIMIT 1;
+
+
+SELECT animals.name AS "Animal Name" FROM visits INNER JOIN vets
+  ON visits.vets_id = vets.id INNER JOIN animals
+  ON visits.animals_id = animals.id WHERE vets.name = 'Maisy Smith'
+  ORDER BY visits.date_of_visit ASC LIMIT 1;
+
+SELECT * FROM visits INNER JOIN vets
+    ON visits.vets_id = vets.id INNER JOIN animals
+    ON visits.animals_id = animals.id  WHERE vets.name = 'Maisy Smith'
+    ORDER BY visits.date_of_visit DESC LIMIT 1;
+
+SELECT COUNT(*), vets.name FROM visits 
+  INNER JOIN vets ON visits.vets_id = vets.id 
+  FULL OUTER JOIN specializations ON vets.id = specializations.vets_id
+  WHERE specializations.species_id IS NULL GROUP BY vets.name;
+
+SELECT COUNT(*), species.name FROM visits 
+  INNER JOIN vets ON visits.vets_id = vets.id
+  INNER JOIN animals ON visits.animals_id = animals.id
+  INNER JOIN species ON species.id = animals.species_id
+  WHERE vets.name = 'Maisy Smith'
+  GROUP BY species.name
+  ORDER BY count LIMIT 1;
+
