@@ -160,5 +160,3 @@ CREATE INDEX visits_vets_id ON visits(vets_id);
 
 SELECT * FROM owners where email = 'owner_18327@mail.com';
 CREATE INDEX owners_email ON owners(email);
-
---explain analyze SELECT * FROM owners where email = 'owner_18327@mail.com';
