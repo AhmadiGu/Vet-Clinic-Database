@@ -151,3 +151,14 @@ SELECT COUNT(*), species.name FROM visits
   GROUP BY species.name
   ORDER BY count LIMIT 1;
 
+-- NEW QUERIES
+SELECT COUNT(*) FROM visits where animals_id = 4;
+CREATE INDEX visits_animals_id ON visits(animals_id);
+
+SELECT * FROM visits where vets_id = 2;
+CREATE INDEX visits_vets_id ON visits(vets_id);
+
+SELECT * FROM owners where email = 'owner_18327@mail.com';
+CREATE INDEX owners_email ON owners(email);
+
+--explain analyze SELECT * FROM owners where email = 'owner_18327@mail.com';
