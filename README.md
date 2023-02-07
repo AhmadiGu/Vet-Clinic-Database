@@ -3,16 +3,9 @@
 > This template should be used for database related projects at Microverse.
 > Generate your own repository, update this README and edit all files content while working on projects. You should not be adding any new files unless asked otherwise.
 
+![diagram](https://user-images.githubusercontent.com/78090048/217240837-662e2cbc-1012-42c4-824d-e61e03bea78d.PNG)
 
-## Getting Started
 
-This repository includes files with plain SQL that can be used to recreate a database:
-
-- Use [schema.sql](./schema.sql) to create all tables.
-- Use [data.sql](./data.sql) to populate tables with sample data.
-- Check [queries.sql](./queries.sql) for examples of queries that can be run on a newly created database. **Important note: this file might include queries that make changes in the database (e.g., remove records). Use them responsibly!**
-
-<a name="readme-top"></a>
 
 <!--
 HOW TO USE:
@@ -63,15 +56,16 @@ After you're finished please remove all the comments and instructions!
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [your_project_name] <a name="about-project"></a>
+# 📖 [Vet_Clinic] <a name="about-project"></a>
 
 > Describe your project in 1 or 2 sentences.
 
-**[your_project__name]** is a...
+**[Vet_clinic]** In this project, you will use a relational database to create the initial data structure for a vet clinic. You will create a table to store animals' information, insert some data into it, and query it.
 
-## 🛠 Built With <a name="built-with"></a>
+## 🛠 Built With <a name="built-with">PostgreSQL</a>
 
-### Tech Stack <a name="tech-stack"></a>
+### Tech Stack <a name="tech-stack">PostgreSQL</a>
+
 
 > Describe the tech stack and include only the relevant sections that apply to your project.
 
@@ -122,11 +116,20 @@ After you're finished please remove all the comments and instructions!
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-> Describe how a new developer could make use of your project.
+ multiple_tables
+This repository includes files with plain SQL that can be used to recreate a database:
 
-To get a local copy up and running, follow these steps.
 
-### Prerequisites
+
+This repository includes files with plain SQL that can be used to recreate a database:
+
+ development
+- Use [schema.sql](./schema.sql) to create all tables.
+- Use [data.sql](./data.sql) to populate tables with sample data.
+- Check [queries.sql](./queries.sql) for examples of queries that can be run on a newly created database. **Important note: this file might include queries that make changes in the database (e.g., remove records). Use them responsibly!**
+
+<a name="readme-top"></a>
+
 
 In order to run this project you need:
 
