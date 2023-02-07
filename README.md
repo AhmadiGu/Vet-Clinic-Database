@@ -1,5 +1,7 @@
 
-
+<div align="right"> 
+  <img src="./image/murple_logo.png" alt="logo" width="40"  height="auto" /> 
+</div>
 
 <!-- TABLE OF CONTENTS -->
 
@@ -32,6 +34,10 @@
 > Vet Clinic Database is a database that contains data about animals.
 
 **[your_project__name]** is a Vet Clinic Database 
+
+<div align="right"> 
+  <img src="./image/diagram.png" alt="logo" width="530"  height="auto" /> 
+</div>
 
 ## 🛠 Built With <a name="built-with"></a>
 
