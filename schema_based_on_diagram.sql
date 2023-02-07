@@ -14,7 +14,7 @@ CREATE TABLE treatment (
 
 CREATE TABLE medical_histories (
     id INT NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    attmat_at timestamp,
+    attmitted_at timestamp,
     patient_id INT,
     status varchar(100),
     FOREIGN KEY (patient_id) REFERENCES patients(id) 
